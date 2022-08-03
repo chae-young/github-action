@@ -18,12 +18,4 @@ jobs:
       with: 
         tag_name: ${{ steps.extract_version_name.outputs.version }} 
         release_name: ${{ steps.extract_version_name.outputs.version }} 
-  deployment:
-    runs-on: ubuntu-latest   
-    steps:
-    - uses: actions/checkout@v2 
-    - name: Deployment 성공      
-      run: npm install
-      run: npm run deploy
-      env: 
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
+  
